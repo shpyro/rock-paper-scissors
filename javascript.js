@@ -1,9 +1,11 @@
 const rock = 'rock';
 const paper = 'paper';
 const scissors = 'scissors';
-
-let playerSelection = '';
 const computerSelection = getComputerChoice();
+
+let roundResult = '';
+let playerSelection = '';
+
 
 function getComputerChoice() {
     let items = [rock, paper, scissors];
@@ -35,12 +37,14 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     for (let i = 0; i < 5; i++) {
+        const computerSelection = getComputerChoice();
+        console.log("Machine: " + computerSelection);
         playRound(prompt("What do you choose?"), computerSelection);
         console.log(roundResult);
+        console.log();
     }
-    
+    return verdict;
 }
 
-console.log("Human:" + playerSelection);
-console.log("Computer:" + computerSelection);
-console.log(game());
+
+game();
