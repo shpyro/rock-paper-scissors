@@ -2,7 +2,7 @@ const rock = 'rock';
 const paper = 'paper';
 const scissors = 'scissors';
 
-let playerSelection = rock;
+let playerSelection = '';
 const computerSelection = getComputerChoice();
 
 function getComputerChoice() {
@@ -28,7 +28,7 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection == scissors && computerSelection == rock) {
         roundResult = "Computer wins this round! Rock beats scissors!";
     } else if (playerSelection == scissors && computerSelection == paper) {
-        roundResult = "Human wins this round! RScissors beats paper!";
+        roundResult = "Human wins this round! Scissors beats paper!";
     }
     return roundResult;
 }
@@ -36,7 +36,9 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     for (let i = 0; i < 5; i++) {
         playRound(prompt("What do you choose?"), computerSelection);
+        console.log(roundResult);
     }
+    
 }
 
 console.log("Human:" + playerSelection);
