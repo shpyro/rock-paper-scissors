@@ -2,10 +2,8 @@ const rock = 'rock';
 const paper = 'paper';
 const scissors = 'scissors';
 
-const playerSelection = rock;
+let playerSelection = rock;
 const computerSelection = getComputerChoice();
-
-
 
 function getComputerChoice() {
     let items = [rock, paper, scissors];
@@ -16,7 +14,7 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == computerSelection) {
-        roundResult = "Remis";
+        roundResult = "It's a Draw";
     } else if (playerSelection == rock && computerSelection == paper) {
         roundResult = "Computer wins this round! Paper beats rock!";
     } else if (playerSelection == rock && computerSelection == scissors) {
@@ -35,6 +33,12 @@ function playRound(playerSelection, computerSelection) {
     return roundResult;
 }
 
+function game() {
+    for (let i = 0; i < 5; i++) {
+        playRound(prompt("What do you choose?"), computerSelection);
+    }
+}
+
 console.log("Human:" + playerSelection);
 console.log("Computer:" + computerSelection);
-console.log(playRound(playerSelection, computerSelection));
+console.log(game());
