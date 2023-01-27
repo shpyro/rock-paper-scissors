@@ -51,7 +51,6 @@ function score() {
 }
 function game() {
      for (let i = 1; i < 6; i++) {
-        let round = 1;
         playRound(prompt("What do you choose?").toLowerCase(), getComputerChoice());
         console.log("Round #" + i + " " + roundResult);
     }
